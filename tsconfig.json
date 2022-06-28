@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "target": "esnext",
-    "moduleResolution": "node",
     "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es2021",
+    "moduleResolution": "node",
+    "strict": true,
     "sourceMap": true,
+    "lib": ["es2021"],
+    "skipLibCheck": true,
+    "rootDir": "src",
     "outDir": "dist",
-    "lib": ["esnext", "dom"],
     "resolveJsonModule": true
   },
   "exclude": ["node_modules"]

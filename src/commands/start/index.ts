@@ -1,6 +1,5 @@
 import { Context, Markup } from 'telegraf';
 import createDebug from 'debug';
-import { author, homepage, name, version } from '../../../package.json';
 
 const debug = createDebug('bot:about_command');
 
@@ -18,7 +17,7 @@ const closeKeyboard = () => async (ctx: Context) => {
 
 const about = () => async (ctx: Context) => {
   ctx.replyWithHTML(
-    `The hand of the king (${version}) è stato sviluppato con il ❤️ da <a href="https://gabrielenapoli.dev">${author}</a> per gli appassionati di ASOIAF e del podcast del ghiaccio e del fuoco.`,
+    `The hand of the king è stato sviluppato con il ❤️ da <a href="https://gabrielenapoli.dev">Napsryu</a> per gli appassionati di ASOIAF e del podcast del ghiaccio e del fuoco.`,
   );
 };
 
