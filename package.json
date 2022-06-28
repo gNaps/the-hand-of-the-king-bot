@@ -1,0 +1,31 @@
+{
+  "name": "the-hand-of-the-king",
+  "version": "1.0.0",
+  "description": "A bot for asoif and 'Il podcast del ghiaccio e del fuoco'",
+  "main": "src/index.js",
+  "author": "Napsryu (Gabriele Napoli)",
+  "homepage": "",
+  "dependencies": {
+    "@bot-base/callback-data": "^0.3.0",
+    "axios": "^0.21.4",
+    "dotenv-cli": "^4.0.0",
+    "express": "^4.17.1",
+    "telegraf": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.6",
+    "@types/node": "^16.0.0",
+    "@zeit/ncc": "^0.22.3",
+    "debug": "^4.3.1",
+    "nodemon": "^2.0.9",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "dev": "DEBUG=bot* dotenv -- nodemon -e ts -x ts-node src/index.ts",
+    "start": "NODE_ENV=production WEBHOOK_URL=${NOW_URL} node dist/index.js",
+    "build": "ncc build src/index.ts -o dist -m",
+    "prettier": "prettier --write 'src/**/*.ts'"
+  }
+}
