@@ -28,7 +28,7 @@
   },
   "scripts": {
     "dev": "DEBUG=bot* dotenv -- nodemon -e ts -x ts-node src/index.ts",
-    "start": "NODE_ENV=production WEBHOOK_URL=${NOW_URL} node dist/index.js",
+    "start": "NODE_ENV=production node dist/index.js",
     "build": "tsc --build",
     "prettier": "prettier --write 'src/**/*.ts'"
   }
