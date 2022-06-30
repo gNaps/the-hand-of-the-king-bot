@@ -18,12 +18,13 @@ export const socialData = new CallbackData<{
 const video = () => (ctx: Context) => {
   debug(`Triggered "video" command`);
   return ctx.reply(
-    `Ciao ${ctx.from?.username}! Cerca un video o controlla la schedule del canale`,
+    `Ciao ${ctx.from?.username}! Cerca un video sul canale`,
     Markup.keyboard([
       '⚡️ Ultimo video',
       '🔍 Cerca un video',
-      '🗓 Schedule',
+      // '🗓 Schedule',
       '✨ Social',
+      '❌ Chiudi',
     ])
       .oneTime()
       .resize(),

@@ -1,8 +1,9 @@
-import { Context, deunionize, Markup, Telegraf } from 'telegraf';
+import { Telegraf } from 'telegraf';
 import createDebug from 'debug';
 
 import { start } from './commands';
-import video, { socialData, videoData } from './commands/video';
+import video, { videoData } from './commands/video';
+import asoiaf from './commands/asoiaf';
 
 const debug = createDebug('bot');
 
@@ -18,11 +19,8 @@ bot.command('start', start.start());
 bot.command('about', start.about());
 bot.command('help', start.help());
 bot.command('podcast', video.video());
-// bot.command('inline', keyboardTest.inline());
-// bot.command('simple', keyboardTest.simple());
-// bot.command('oneTime', keyboardTest.oneTime());
-
-// bot.command('onetime', oneTime());
+bot.command('character', asoiaf.character());
+bot.command('house', asoiaf.house());
 
 bot.hears('⚡️ Ultimo video', video.last());
 bot.hears('🔍 Cerca un video', video.search());

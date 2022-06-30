@@ -6,7 +6,15 @@ const debug = createDebug('bot:about_command');
 const start = () => async (ctx: Context) => {
   debug(`Triggered "start" command`);
 
-  const message = `Welcome in asoiaf podcast bot ❄️🔥`;
+  const message = `
+Ciao ${ctx.from?.username} ❄️🔥
+Per cominciare a usare il bot puoi utilizzare i seguenti comandi
+/podcast => Per cercare gli episodi, visionare la schedule del canale (SOON) e info sul podcast
+/character => Personaggio casuale della saga
+/house => Casata casuale della saga
+/about => Info sul bot
+  
+per rivedere di nuovo la lista comandi usa /help`;
 
   return ctx.replyWithHTML(message);
 };
@@ -23,11 +31,13 @@ const about = () => async (ctx: Context) => {
 
 const help = () => async (ctx: Context) => {
   ctx.replyWithHTML(
-    `Elenco dei comandi possibili:
-    /podcast => Per cercare gli episodi, visionare la schedule del canale (SOON) e info sul podcast
-    /asoiaf => Informazioni sul mondo di asoiaf (SOON)
-    /about => Info sul bot
-    `,
+    `
+Elenco dei comandi possibili:
+/podcast => Per cercare gli episodi, visionare la schedule del canale (SOON) e info sul podcast
+/character => Personaggio casuale della saga
+/house => Casata casuale della saga
+/about => Info sul bot
+  `,
   );
 };
 
